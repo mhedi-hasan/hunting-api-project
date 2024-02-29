@@ -10,13 +10,31 @@
     <!-- tailwind cdn -->
 
 </head>
-<body class="my-12 mx-10">
+<body class="py-12 px-10 bg-slate-400">
     <header>
         <h1 class="text-5xl">Hunting Phone API</h1>
     </header>
     <main class="my-4">
+        <section class="bg-gray-200 mr-12 p-4 m-4 rounded-lg">
+            <input id="search-field" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
+            <button onclick="handleSearch()" class="btn btn-accent ml-2">Search</button>
+            <!-- ------------------ -->
+            <input id="search-field2" type="text" placeholder="Type here" class="input ml-4 input-bordered w-full max-w-xs"/>
+            <button onclick="handleSearch2()" class="btn ml-2 btn-secondary">Search here</button>
+        </section>
+
+        <!-- search result -->
         <section>
-            <div id="card-container" class="grid grid-cols-3 gap-4"></div>
+            <!-- loading -->
+            <div id="loading-spinner" class="text-center my-10 hidden">
+                <span class="loading loading-lg loading-spinner text-secondary"></span>
+            </div>
+            <div id="phone-container" class="grid place-content-around lg:grid-cols-3 gap-4"></div>
+            <!-- show all button -->
+            <div>
+                <button id="show-all-container" class="hidden btn mt-4 ml-8 text-xl text-white bg-orange-700">Show All</button>
+            </div>
+            
         </section>
     </main>
     <footer>
