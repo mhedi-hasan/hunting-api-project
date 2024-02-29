@@ -10,17 +10,18 @@
     <!-- tailwind cdn -->
 
 </head>
-<body class="py-12 px-10 bg-slate-400">
+<body class="pt-4 px-10 bg-slate-400">
     <header>
-        <h1 class="text-5xl">Hunting Phone API</h1>
+        <h1 class="text-5xl text-center">Hunting Phone API</h1>
+        <h1 class="text-3xl font-medium">Search your phone and order now.</h1>
     </header>
     <main class="my-4">
         <section class="bg-gray-200 mr-12 p-4 m-4 rounded-lg">
             <input id="search-field" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
             <button onclick="handleSearch()" class="btn btn-accent ml-2">Search</button>
             <!-- ------------------ -->
-            <input id="search-field2" type="text" placeholder="Type here" class="input ml-4 input-bordered w-full max-w-xs"/>
-            <button onclick="handleSearch2()" class="btn ml-2 btn-secondary">Search here</button>
+            <!-- <input id="search-field2" type="text" placeholder="Type here" class="input ml-4 input-bordered w-full max-w-xs"/>
+            <button onclick="handleSearch2()" class="btn ml-2 btn-secondary">Search here</button> -->
         </section>
 
         <!-- search result -->
@@ -32,10 +33,26 @@
             <div id="phone-container" class="grid place-content-around lg:grid-cols-3 gap-4"></div>
             <!-- show all button -->
             <div>
-                <button id="show-all-container" class="hidden btn mt-4 ml-8 text-xl text-white bg-orange-700">Show All</button>
+                <button onclick="handleShowAll()" id="show-all-container" class="hidden btn mt-4 ml-8 text-xl text-white bg-orange-700">Show All</button>
             </div>
-            
         </section>
+        <!-- Show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+<dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    
+    <h3 id="show-detail-phone-name" class="font-bold text-xl"></h3>
+    <div id="show-details-container">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn text-lg bg-orange-500">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
     </main>
     <footer>
 
